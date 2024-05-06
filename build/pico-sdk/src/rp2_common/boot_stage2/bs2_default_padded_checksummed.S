@@ -1,4 +1,4 @@
-// Padded and checksummed version of: M:/DEV/UNISAL/Eletronica_Embarcada_IoT/Temp_Nucleo_MQTT/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin
+// Padded and checksummed version of: C:/dev/unisal/Eletronica_Embarcada_IoT/core_temp_to_mqtt/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin
 
 .cpu cortex-m0plus
 .thumb

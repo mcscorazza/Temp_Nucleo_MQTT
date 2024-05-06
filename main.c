@@ -79,7 +79,7 @@ int main()
 
   mqtt_client_t* cliente_mqtt = mqtt_client_new();
   mqtt_set_inpub_callback(cliente_mqtt, &mqtt_incoming_publish_cb, &mqtt_incoming_data_cb, NULL);
-  err_t erro = mqtt_client_connect(cliente_mqtt, &addr, 8083, &mqtt_connection_cb, NULL, &mqtt_client_info);
+  err_t erro = mqtt_client_connect(cliente_mqtt, &addr, 1883, &mqtt_connection_cb, NULL, &mqtt_client_info);
   if(erro != ERR_OK){
     printf("Connection Error!\n");
     return 1;
@@ -97,12 +97,13 @@ int main()
     snprintf(temp_str, sizeof(temp_str), "%f", temp);
     int bytes = strlen(temp_str);
 
-    if (board_button_read()){
-      printf("Send temperature to MQTT Brocker:");
-      printf(temp_str);
-      printf(" °C\n");
-      mqtt_publish(cliente_mqtt, "pico/temperature", temp_str, bytes, 0, false, &mqtt_request_cb, NULL);
+    if(board_button_read()) {
+      printf("Send temperture to MQTT Broker: ");
+      printf("%s °C\n", temp_str);
+      mqtt_publish(cliente_mqtt, "corazza/pico_temp", temp_str, 24, 0, false, &mqtt_request_cb, NULL);
+
     }
+
     sleep_ms(1000);
   }
 }

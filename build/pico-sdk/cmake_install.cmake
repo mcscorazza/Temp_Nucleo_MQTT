@@ -39,9 +39,9 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("M:/DEV/UNISAL/Eletronica_Embarcada_IoT/Temp_Nucleo_MQTT/build/pico-sdk/tools/cmake_install.cmake")
-  include("M:/DEV/UNISAL/Eletronica_Embarcada_IoT/Temp_Nucleo_MQTT/build/pico-sdk/src/cmake_install.cmake")
-  include("M:/DEV/UNISAL/Eletronica_Embarcada_IoT/Temp_Nucleo_MQTT/build/pico-sdk/docs/cmake_install.cmake")
+  include("C:/dev/unisal/Eletronica_Embarcada_IoT/core_temp_to_mqtt/build/pico-sdk/tools/cmake_install.cmake")
+  include("C:/dev/unisal/Eletronica_Embarcada_IoT/core_temp_to_mqtt/build/pico-sdk/src/cmake_install.cmake")
+  include("C:/dev/unisal/Eletronica_Embarcada_IoT/core_temp_to_mqtt/build/pico-sdk/docs/cmake_install.cmake")
 
 endif()
 

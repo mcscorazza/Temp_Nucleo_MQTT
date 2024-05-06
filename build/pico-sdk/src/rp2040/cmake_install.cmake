@@ -39,8 +39,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("M:/DEV/UNISAL/Eletronica_Embarcada_IoT/Temp_Nucleo_MQTT/build/pico-sdk/src/rp2040/hardware_regs/cmake_install.cmake")
-  include("M:/DEV/UNISAL/Eletronica_Embarcada_IoT/Temp_Nucleo_MQTT/build/pico-sdk/src/rp2040/hardware_structs/cmake_install.cmake")
+  include("C:/dev/unisal/Eletronica_Embarcada_IoT/core_temp_to_mqtt/build/pico-sdk/src/rp2040/hardware_regs/cmake_install.cmake")
+  include("C:/dev/unisal/Eletronica_Embarcada_IoT/core_temp_to_mqtt/build/pico-sdk/src/rp2040/hardware_structs/cmake_install.cmake")
 
 endif()
 
