@@ -14,7 +14,7 @@
 
 struct mqtt_connect_client_info_t mqtt_client_info=
 {
-  "corazza_pico_w",  /*client id*/
+  "corazza/pico_w",   /*client id*/
   NULL,               /* user */
   NULL,               /* pass */
   0,                  /* keep alive */
@@ -64,7 +64,7 @@ int main()
 
   //Conectando ao roteador
   if (cyw43_arch_wifi_connect_timeout_ms(WIFI_SSID, WIFI_PASSWORD, CYW43_AUTH_WPA2_AES_PSK, 30000)){
-    printf("Connection Failed!\n");
+    printf("WiFi Connection Failed!\n");
     return 1;
   }
   printf("WiFi Connected: %s\n",WIFI_SSID);
@@ -84,8 +84,8 @@ int main()
     printf("Connection Error!\n");
     return 1;
   }
-
   printf("MQTT Connected!\n");
+
 
   while(true){
     uint16_t raw = adc_read();
@@ -98,7 +98,9 @@ int main()
     int bytes = strlen(temp_str);
 
     if (board_button_read()){
+      printf("Send temperature to MQTT Brocker...");
       mqtt_publish(cliente_mqtt, "rpi_pico/temperature", temp_str, bytes, 0, false, &mqtt_request_cb, NULL);
+      printf("OK!\n");
     }
 
     sleep_ms(1000);
